@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Nutricionista Mariana Freire — nutrição clínica, esportiva e metabólica com foco em autonomia e resultado. Atendimento presencial em Bragança Paulista e online." />
+  <title>Nutricionista Mariana Freire | Nutrição com estratégia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #253329;
+      --forest: #344c3b;
+      --forest-2: #496453;
+      --sage: #a9b8a8;
+      --sage-soft: #e9eee8;
+      --cream: #f7f3eb;
+      --paper: #fffdf9;
+      --gold: #b79255;
+      --gold-light: #dcc59c;
+      --line: rgba(52,76,59,.15);
+      --shadow: 0 28px 70px rgba(37,51,41,.12);
+      --radius: 28px;
+      --container: min(1180px, calc(100% - 40px));
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: "DM Sans", sans-serif; line-height: 1.65; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: var(--container); margin-inline: auto; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 16px; color: var(--gold); text-transform: uppercase; letter-spacing: .15em; font-weight: 700; font-size: .76rem; }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+    h1,h2,h3 { font-family: "Playfair Display", serif; line-height: 1.08; margin: 0; font-weight: 600; }
+    h1 { font-size: clamp(2.7rem, 7vw, 5.7rem); letter-spacing: -.045em; }
+    h2 { font-size: clamp(2.2rem, 5vw, 4rem); letter-spacing: -.035em; }
+    h3 { font-size: 1.45rem; }
+    p { margin: 0; }
+    .muted { color: #657169; }
+    .btn { min-height: 54px; display: inline-flex; justify-content: center; align-items: center; gap: 10px; padding: 0 24px; border-radius: 999px; font-weight: 700; border: 1px solid transparent; transition: .25s ease; cursor: pointer; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--forest); color: #fff; box-shadow: 0 14px 28px rgba(52,76,59,.2); }
+    .btn-primary:hover { background: #263b2e; }
+    .btn-outline { border-color: var(--line); background: rgba(255,255,255,.68); backdrop-filter: blur(10px); }
+    .btn-outline:hover { border-color: var(--gold); }
+    .icon { width: 19px; height: 19px; }
+
+    .topbar { background: var(--forest); color: #fff; font-size: .82rem; }
+    .topbar .container { min-height: 38px; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .topbar-links { display: flex; gap: 20px; opacity: .9; }
+    .nav { position: sticky; top: 0; z-index: 30; background: rgba(255,253,249,.9); border-bottom: 1px solid transparent; backdrop-filter: blur(15px); transition: .2s; }
+    .nav.scrolled { border-color: var(--line); box-shadow: 0 8px 30px rgba(37,51,41,.06); }
+    .nav .container { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .brand { display: flex; align-items: center; min-width: 245px; }
+    .brand-logo { width: 238px; height: 58px; object-fit: contain; object-position: left center; }
+    .nav-links { display: flex; align-items: center; gap: 25px; font-size: .9rem; font-weight: 600; }
+    .nav-links a:hover { color: var(--gold); }
+    .menu-btn { display: none; border: 0; background: transparent; padding: 8px; }
+
+    .hero { position: relative; overflow: hidden; background: linear-gradient(115deg, var(--cream), #f8f6f0 55%, var(--sage-soft)); }
+    .hero::after { content: ""; position: absolute; width: 460px; height: 460px; border-radius: 50%; border: 1px solid rgba(183,146,85,.2); right: -180px; top: -130px; box-shadow: 0 0 0 55px rgba(183,146,85,.04), 0 0 0 110px rgba(183,146,85,.025); }
+    .hero-grid { min-height: 720px; display: grid; grid-template-columns: 1.06fr .94fr; align-items: center; gap: 64px; padding: 70px 0 78px; position: relative; z-index: 2; }
+    .hero-copy h1 span { color: var(--forest-2); }
+    .hero-lead { max-width: 670px; margin-top: 26px; font-size: clamp(1.05rem, 2vw, 1.24rem); color: #56635a; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .hero-trust { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 33px; color: #536057; font-size: .9rem; }
+    .hero-trust span { display: flex; align-items: center; gap: 8px; }
+    .hero-trust i { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+    .hero-visual { position: relative; min-height: 560px; }
+    .hero-photo { position: absolute; inset: 0 0 0 55px; width: calc(100% - 55px); height: 100%; object-fit: cover; object-position: center 18%; border-radius: 190px 190px 26px 26px; box-shadow: var(--shadow); background: var(--sage-soft); }
+    .experience-card { position: absolute; left: 0; bottom: 52px; width: 190px; padding: 22px; border-radius: 22px; background: rgba(255,253,249,.94); border: 1px solid rgba(255,255,255,.9); backdrop-filter: blur(16px); box-shadow: 0 20px 45px rgba(37,51,41,.15); }
+    .experience-card strong { font-family: "Playfair Display",serif; color: var(--forest); font-size: 2.25rem; display: block; line-height: 1; }
+    .experience-card span { display: block; color: #657169; margin-top: 7px; font-size: .82rem; }
+
+    section { padding: 110px 0; }
+    .intro { background: var(--paper); }
+    .intro-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 85px; align-items: start; }
+    .intro-title { position: sticky; top: 130px; }
+    .intro-copy { display: grid; gap: 24px; font-size: 1.06rem; }
+    .statement { padding: 28px 30px; border-left: 3px solid var(--gold); background: var(--cream); font-family: "Playfair Display",serif; font-size: 1.45rem; }
+    .goal-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 4px; }
+    .goal { padding: 18px; border: 1px solid var(--line); border-radius: 16px; background: #fff; font-weight: 600; }
+    .goal::before { content: "✦"; color: var(--gold); margin-right: 9px; }
+
+    .method { background: var(--forest); color: white; position: relative; overflow: hidden; }
+    .method::before { content:""; position:absolute; inset:0; background: radial-gradient(circle at 15% 10%, rgba(255,255,255,.08), transparent 33%), radial-gradient(circle at 90% 90%, rgba(183,146,85,.15), transparent 35%); }
+    .section-head { position: relative; max-width: 700px; margin-bottom: 48px; }
+    .section-head p { margin-top: 18px; color: inherit; opacity: .72; max-width: 600px; }
+    .method-grid { position: relative; display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+    .method-card { min-height: 360px; padding: 28px; border-radius: 22px; border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.06); display: flex; flex-direction: column; transition: .25s ease; }
+    .method-card:hover { transform: translateY(-6px); background: rgba(255,255,255,.09); border-color: rgba(220,197,156,.5); }
+    .method-number { color: var(--gold-light); font-size: .78rem; letter-spacing: .15em; margin-bottom: auto; }
+    .method-card h3 { margin: 30px 0 16px; }
+    .method-card p { color: rgba(255,255,255,.7); font-size: .92rem; }
+    .method-link { margin-top: 22px; color: var(--gold-light); font-weight: 700; font-size: .86rem; }
+
+    .included { background: var(--cream); }
+    .included-grid { display: grid; grid-template-columns: .86fr 1.14fr; gap: 74px; align-items: center; }
+    .included-photo-wrap { position: relative; }
+    .included-photo { width: 100%; height: 610px; object-fit: cover; object-position: center; border-radius: var(--radius); box-shadow: var(--shadow); background: var(--sage-soft); }
+    .included-photo-wrap::after { content:""; position:absolute; inset: 22px -22px -22px 22px; border:1px solid var(--gold-light); border-radius: var(--radius); z-index:-1; }
+    .check-list { display: grid; gap: 6px; margin-top: 30px; }
+    .check-item { display: grid; grid-template-columns: 34px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); align-items: start; }
+    .check-item span:first-child { width: 28px; height: 28px; border-radius: 50%; display:grid; place-items:center; color: white; background: var(--forest); font-size: .8rem; }
+
+    .offers { background: var(--paper); }
+    .offers .section-head { text-align: center; margin-inline: auto; }
+    .offer-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; align-items: stretch; }
+    .offer-card { border: 1px solid var(--line); border-radius: 24px; padding: 32px; background: #fff; display: flex; flex-direction: column; position: relative; overflow:hidden; }
+    .offer-card.featured { background: var(--forest); color:#fff; transform: translateY(-12px); box-shadow: var(--shadow); }
+    .offer-card.featured::before { content:"Mais escolhido"; position:absolute; top:18px; right:-38px; transform:rotate(38deg); background:var(--gold); color:white; width:165px; text-align:center; padding:5px; font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
+    .offer-tag { color: var(--gold); text-transform:uppercase; letter-spacing:.13em; font-size:.72rem; font-weight:700; }
+    .offer-card h3 { font-size: 1.9rem; margin: 10px 0; }
+    .offer-card p { color: #6b766e; }
+    .offer-card.featured p { color: rgba(255,255,255,.72); }
+    .offer-card ul { padding:0; margin:28px 0 34px; list-style:none; display:grid; gap:13px; }
+    .offer-card li { display:flex; gap:10px; font-size:.91rem; }
+    .offer-card li::before { content:"✓"; color:var(--gold); font-weight:900; }
+    .offer-card .btn { margin-top:auto; }
+    .offer-card.featured .btn { background:#fff; color:var(--forest); }
+
+    .about { background: var(--sage-soft); }
+    .about-grid { display:grid; grid-template-columns: .95fr 1.05fr; gap:75px; align-items:center; }
+    .about-gallery { display:grid; grid-template-columns: 1fr .72fr; gap:14px; height:610px; }
+    .about-gallery img { width:100%; height:100%; object-fit:cover; object-position:center; border-radius:24px; background:var(--cream); }
+    .about-gallery .side { display:grid; gap:14px; grid-template-rows: 1fr 1fr; }
+    .about-copy p { margin-top:18px; color:#5e6a62; }
+    .about-meta { display:flex; gap:20px; margin-top:30px; padding-top:24px; border-top:1px solid var(--line); }
+    .about-meta strong { font-family:"Playfair Display",serif; display:block; font-size:1.6rem; color:var(--forest); }
+    .about-meta span { font-size:.78rem; color:#69756d; }
+
+    .testimonials { background:var(--paper); }
+    .testimonial-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:18px; }
+    .testimonial { padding:28px; background:var(--cream); border-radius:22px; border:1px solid rgba(183,146,85,.14); }
+    .stars { color:var(--gold); letter-spacing:.15em; margin-bottom:20px; }
+    .testimonial blockquote { margin:0; color:#4f5b53; font-size:.92rem; }
+    .testimonial footer { margin-top:22px; font-weight:700; }
+    .testimonial small { display:block; color:#7b857e; font-weight:400; margin-top:2px; }
+
+    .faq { background:var(--cream); }
+    .faq-grid { display:grid; grid-template-columns: .72fr 1.28fr; gap:80px; }
+    .faq-list { border-top:1px solid var(--line); }
+    details { border-bottom:1px solid var(--line); }
+    summary { list-style:none; cursor:pointer; padding:23px 46px 23px 0; font-weight:700; position:relative; }
+    summary::-webkit-details-marker { display:none; }
+    summary::after { content:"+"; position:absolute; right:4px; top:18px; font-size:1.6rem; font-weight:400; color:var(--gold); transition:.2s; }
+    details[open] summary::after { transform:rotate(45deg); }
+    details div { padding:0 36px 24px 0; color:#606b64; font-size:.93rem; }
+    details div p + p { margin-top:10px; }
+
+    .location { background:var(--forest); color:white; }
+    .location-grid { display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center; }
+    .location-card { padding:44px; border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.06); border-radius:var(--radius); }
+    .location-card h2 { margin-bottom:24px; }
+    .contact-row { display:flex; gap:13px; padding:15px 0; border-bottom:1px solid rgba(255,255,255,.11); color:rgba(255,255,255,.78); }
+    .contact-row strong { color:#fff; display:block; }
+    .map-link { min-height:460px; border-radius:var(--radius); background:linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.03)), url('https://maps.googleapis.com/maps/api/staticmap?center=Pra%C3%A7a+Maastricht+200,+Bragan%C3%A7a+Paulista&zoom=15&size=700x550&maptype=roadmap') center/cover; display:grid; place-items:center; border:1px solid rgba(255,255,255,.13); }
+    .map-link .btn { background:#fff; color:var(--forest); }
+
+    footer.site-footer { background:#223128; color:white; padding:35px 0 100px; }
+    .footer-row { display:flex; align-items:center; justify-content:space-between; gap:30px; padding-top:26px; border-top:1px solid rgba(255,255,255,.1); font-size:.82rem; color:rgba(255,255,255,.55); }
+    .footer-links { display:flex; gap:20px; }
+    .whatsapp-float { position:fixed; z-index:50; right:22px; bottom:22px; width:58px; height:58px; border-radius:50%; display:grid; place-items:center; color:white; background:#25D366; box-shadow:0 12px 30px rgba(37,211,102,.35); transition:.2s; }
+    .whatsapp-float:hover { transform:scale(1.06); }
+
+    @media (max-width: 980px) {
+      .nav-links { display:none; position:absolute; top:78px; left:20px; right:20px; padding:20px; background:var(--paper); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow); flex-direction:column; align-items:stretch; }
+      .nav-links.open { display:flex; }
+      .nav-links .btn { width:100%; }
+      .menu-btn { display:block; }
+      .hero-grid, .intro-grid, .included-grid, .about-grid, .faq-grid, .location-grid { grid-template-columns:1fr; }
+      .hero-grid { padding-top:48px; gap:38px; }
+      .hero-visual { min-height:530px; }
+      .method-grid { grid-template-columns:repeat(2,1fr); }
+      .offer-grid { grid-template-columns:1fr; max-width:680px; margin-inline:auto; }
+      .offer-card.featured { transform:none; }
+      .testimonial-grid { grid-template-columns:1fr; }
+      .intro-title { position:static; }
+      .about-gallery { height:520px; }
+      .faq-grid { gap:35px; }
+    }
+    @media (max-width: 640px) {
+      :root { --container: min(100% - 28px, 1180px); --radius:22px; }
+      section { padding:78px 0; }
+      .topbar .container { justify-content:center; }
+      .topbar-links a:first-child { display:none; }
+      .nav .container { min-height:70px; }
+      .brand-mark { width:40px; height:40px; }
+      .brand small { display:none; }
+      .hero-grid { min-height:auto; padding:52px 0 55px; }
+      h1 { font-size:clamp(2.7rem, 14vw, 4rem); }
+      .hero-actions { display:grid; }
+      .hero-actions .btn { width:100%; }
+      .hero-visual { min-height:430px; }
+      .hero-photo { left:28px; width:calc(100% - 28px); border-radius:110px 110px 20px 20px; }
+      .experience-card { bottom:26px; width:162px; padding:17px; }
+      .goal-grid, .method-grid { grid-template-columns:1fr; }
+      .method-card { min-height:290px; }
+      .included-photo { height:440px; }
+      .included-photo-wrap::after { display:none; }
+      .about-gallery { height:430px; grid-template-columns:1fr; }
+      .about-gallery .side { display:none; }
+      .about-meta { flex-wrap:wrap; }
+      .location-card { padding:28px 22px; }
+      .map-link { min-height:300px; }
+      .footer-row { align-items:flex-start; flex-direction:column; }
+      .footer-links { flex-wrap:wrap; }
+      .whatsapp-float { width:54px; height:54px; right:14px; bottom:14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>Atendimento presencial e online</span>
+      <div class="topbar-links">
+        <a href="mailto:marianarfreire@gmail.com">marianarfreire@gmail.com</a>
+        <a href="https://wa.me/5511982984457" target="_blank" rel="noopener">WhatsApp (11) 98298-4457</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav" id="nav">
+    <div class="container">
+      <a class="brand" href="#inicio" aria-label="Mariana Freire - início">
+        <img class="brand-logo" src="assets/logo-mariana-freire.png" alt="Mariana Freire Nutricionista" />
+      </a>
+      <nav class="nav-links" id="menu">
+        <a href="#metodo">Método</a><a href="#consulta">Consulta</a><a href="#planos">Planos</a><a href="#sobre">Sobre</a><a href="#avaliacoes">Avaliações</a><a href="#duvidas">Dúvidas</a>
+        <a class="btn btn-primary" href="https://wa.me/5511982984457?text=Olá%2C%20Mariana!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Agendar consulta</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Nutrição inteligente e personalizada</span>
+          <h1>Seu corpo não precisa de mais força. Precisa da <span>estratégia certa.</span></h1>
+          <p class="hero-lead">Depois dos 30, repetir dieta, cortar comida e treinar mais não resolve. Meu trabalho é ajudar você a ler o próprio corpo e retomar o controle com uma estratégia alinhada à sua fase de vida.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5511982984457?text=Olá%2C%20Mariana!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Agendar consulta pelo WhatsApp</a>
+            <a class="btn btn-outline" href="#metodo">Conhecer o método</a>
+          </div>
+          <div class="hero-trust"><span><i></i>Mais de 18 anos de experiência</span><span><i></i>Presencial e online</span><span><i></i>Plano individualizado</span></div>
+        </div>
+        <div class="hero-visual">
+          <img class="hero-photo" src="assets/mariana-freire.jpg" alt="Nutricionista Mariana Freire em seu consultório" />
+          <div class="experience-card"><strong>18+</strong><span>anos ajudando pessoas a retomarem o controle do próprio corpo</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="container intro-grid">
+        <div class="intro-title"><span class="eyebrow">Qual é o seu objetivo?</span><h2>Não é falta de disciplina.</h2></div>
+        <div class="intro-copy">
+          <p>Você está frustrado porque ninguém te ensinou a ler o seu corpo do jeito certo. O corpo muda, o metabolismo muda e a estratégia também precisa mudar.</p>
+          <div class="goal-grid">
+            <div class="goal">Emagrecer com estratégia</div><div class="goal">Ganhar massa muscular</div><div class="goal">Reduzir barriga, inchaço e retenção</div><div class="goal">Melhorar saúde hormonal, intestinal e metabólica</div><div class="goal">Recuperar a confiança no próprio corpo</div>
+          </div>
+          <div class="statement">Aqui não existe plano genérico. Existe leitura de corpo, estratégia e acompanhamento.</div>
+          <p>Se você sente que faz “tudo certo” e ainda assim não se reconhece no espelho, talvez o problema nunca tenha sido você — e sim a abordagem.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="method" id="metodo">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">Conheça meu método</span><h2>Uma abordagem completa para resultados sustentáveis.</h2><p>Consultas presenciais e online, com investigação, estratégia e capacitação alimentar.</p></div>
+        <div class="method-grid">
+          <a class="method-card" href="#raiz" id="raiz"><span class="method-number">01 / INVESTIGAR</span><h3>Raiz do Problema</h3><p>Antes de qualquer plano alimentar, investigo histórico, rotina, comportamento, exames e sinais do corpo. Não tratamos sintomas isolados. Tratamos a origem.</p><span class="method-link">Entender este pilar →</span></a>
+          <a class="method-card" href="#rotina" id="rotina"><span class="method-number">02 / ORGANIZAR</span><h3>Organização da Rotina</h3><p>Ajustamos horários, prioridades e escolhas para que a nutrição funcione dentro da sua vida real — e não contra ela. Constância nasce da organização certa.</p><span class="method-link">Entender este pilar →</span></a>
+          <a class="method-card" href="#reequilibrio" id="reequilibrio"><span class="method-number">03 / REEQUILIBRAR</span><h3>Reequilíbrio do Organismo</h3><p>Inflamação, carências nutricionais, sensibilidade alimentar e estresse metabólico podem impedir resultados. O objetivo é devolver ao organismo a capacidade de responder.</p><span class="method-link">Entender este pilar →</span></a>
+          <a class="method-card" href="#autonomia" id="autonomia"><span class="method-number">04 / CAPACITAR</span><h3>Capacitação Alimentar</h3><p>Você aprende a reconhecer sinais e fazer escolhas com segurança, sem depender de cardápios engessados ou contagens obsessivas. Autonomia alimentar é liberdade.</p><span class="method-link">Entender este pilar →</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="included" id="consulta">
+      <div class="container included-grid">
+        <div class="included-photo-wrap"><img class="included-photo" src="assets/consultorio-mariana-freire.jpg" alt="Consultório da nutricionista Mariana Freire" /></div>
+        <div>
+          <span class="eyebrow">O que está incluso</span><h2>Uma consulta completa, com direção desde o primeiro encontro.</h2>
+          <div class="check-list">
+            <div class="check-item"><span>✓</span><span>Análise da composição corporal, medidas, peso e IMC</span></div>
+            <div class="check-item"><span>✓</span><span>Exame de bioimpedância simples</span></div>
+            <div class="check-item"><span>✓</span><span>Esclarecimento de todas as suas dúvidas</span></div>
+            <div class="check-item"><span>✓</span><span>Plano alimentar direcionado ao seu objetivo</span></div>
+            <div class="check-item"><span>✓</span><span>Solicitação de exames sanguíneos</span></div>
+            <div class="check-item"><span>✓</span><span>Prescrição de suplementos e fitoterápicos</span></div>
+            <div class="check-item"><span>✓</span><span>Acesso ao WhatsApp para dúvidas no pós-consulta</span></div>
+            <div class="check-item"><span>✓</span><span>Conhecimento de estratégias e manobras alimentares</span></div>
+          </div>
+          <a class="btn btn-primary" style="margin-top:28px" href="https://wa.me/5511982984457?text=Olá%2C%20Mariana!%20Quero%20saber%20mais%20sobre%20a%20consulta." target="_blank" rel="noopener">Quero agendar minha consulta</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="offers" id="planos">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">Escolha sua jornada</span><h2>Do primeiro direcionamento ao acompanhamento contínuo.</h2><p>Valores e condições são informados em contato particular pelo WhatsApp.</p></div>
+        <div class="offer-grid">
+          <article class="offer-card"><span class="offer-tag">Direcionamento</span><h3>Sessão pontual</h3><p>Para quem busca uma avaliação completa e um plano inicial alinhado ao seu objetivo.</p><ul><li>Avaliação individualizada</li><li>Bioimpedância simples</li><li>Plano alimentar direcionado</li><li>Orientação pós-consulta</li></ul><a class="btn btn-outline" href="https://wa.me/5511982984457?text=Olá%2C%20Mariana!%20Quero%20informações%20sobre%20a%20sessão%20pontual." target="_blank" rel="noopener">Consultar condições</a></article>
+          <article class="offer-card featured"><span class="offer-tag">Acompanhamento</span><h3>Plano 90 dias</h3><p>Para construir consistência e acompanhar a resposta do corpo durante o prazo mínimo normalmente necessário ao tratamento nutricional.</p><ul><li>Acompanhamento mais próximo</li><li>Ajustes de estratégia</li><li>Acompanhamento da evolução</li><li>Condição reduzida em pacote</li></ul><a class="btn" href="https://wa.me/5511982984457?text=Olá%2C%20Mariana!%20Quero%20informações%20sobre%20o%20plano%20de%2090%20dias." target="_blank" rel="noopener">Falar sobre o plano</a></article>
+          <article class="offer-card"><span class="offer-tag">Consolidação</span><h3>Plano 180 dias</h3><p>Para quem deseja um período maior de acompanhamento e consolidação da autonomia alimentar.</p><ul><li>Estratégia de longo prazo</li><li>Monitoramento da composição corporal</li><li>Ajustes conforme evolução</li><li>Foco em resultado sustentável</li></ul><a class="btn btn-outline" href="https://wa.me/5511982984457?text=Olá%2C%20Mariana!%20Quero%20informações%20sobre%20o%20plano%20de%20180%20dias." target="_blank" rel="noopener">Consultar condições</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="container about-grid">
+        <div class="about-gallery"><img src="assets/mariana-freire.jpg" alt="Mariana Freire, nutricionista" /><div class="side"><img src="assets/consultorio-mariana-freire.jpg" alt="Consultório de Mariana Freire" /><img src="assets/logo-mariana-freire.png" alt="Logo Mariana Freire Nutricionista" style="object-fit:contain;padding:28px;background:#223128" /></div></div>
+        <div class="about-copy"><span class="eyebrow">Nutricionista Mariana Freire</span><h2>Nutrição clínica, esportiva e metabólica.</h2><p>Sou nutricionista com mais de 18 anos de experiência ajudando pessoas a retomarem o controle do próprio corpo — sem dietas extremas, sem culpa e sem dependência de planos engessados.</p><p>Meu trabalho vai muito além de prescrever o que comer. Ensino homens e mulheres a entenderem o próprio corpo, respeitarem seus sinais e construírem uma relação inteligente, madura e sustentável com a alimentação.</p><p>Minha abordagem é sistêmica e individual: cada pessoa é avaliada por completo — rotina, comportamento, histórico, exames e fase de vida. O objetivo é desenvolver autonomia alimentar, melhorar composição corporal, saúde metabólica e a confiança no próprio corpo.</p><div class="about-meta"><div><strong>18+</strong><span>anos de experiência</span></div><div><strong>Clínica</strong><span>esportiva e metabólica</span></div><div><strong>Online</strong><span>e presencial</span></div></div></div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="avaliacoes">
+      <div class="container"><div class="section-head"><span class="eyebrow">Pacientes reais</span><h2>Resultados que vão além de uma dieta.</h2></div>
+        <div class="testimonial-grid">
+          <article class="testimonial"><div class="stars">★★★★★</div><blockquote>“Profissional excelente que escuta os pacientes com atenção e nos ajuda a encaixar a melhor dieta para cada indivíduo. Obtive resultado rápido e duradouro. Mais do que somente uma dieta, aprendi as regras básicas da alimentação.”</blockquote><footer>Luana E<small>Paciente</small></footer></article>
+          <article class="testimonial"><div class="stars">★★★★★</div><blockquote>“Embasada na ciência, a sua consulta é humanizada e personalizada. A proposta de tratamento baseia-se na sua individualidade — dia a dia, profissão, cultura e família — além da excelência no atendimento com crianças.”</blockquote><footer>Andreia R<small>Paciente</small></footer></article>
+          <article class="testimonial"><div class="stars">★★★★★</div><blockquote>“Já sou paciente da Mariana Freire há muito tempo e, graças a ela, consegui atingir o meu objetivo no ganho de massa. Ela é uma excelente profissional!”</blockquote><footer>Luiz D<small>Paciente</small></footer></article>
+        </div>
+        <div style="text-align:center;margin-top:34px"><a class="btn btn-outline" href="https://www.google.com.br/search?q=nutricionista+bragan%C3%A7a+paulista" target="_blank" rel="noopener">Ver mais avaliações de pacientes</a></div>
+      </div>
+    </section>
+
+    <section class="faq" id="duvidas"><div class="container faq-grid"><div><span class="eyebrow">Principais dúvidas</span><h2>Informação clara antes de começar.</h2><p class="muted" style="margin-top:20px">Ainda ficou alguma dúvida? Fale diretamente com a Mariana pelo WhatsApp.</p><a class="btn btn-primary" style="margin-top:26px" href="https://wa.me/5511982984457?text=Olá%2C%20Mariana!%20Tenho%20uma%20dúvida%20sobre%20a%20consulta." target="_blank" rel="noopener">Tirar uma dúvida</a></div>
+      <div class="faq-list">
+        <details><summary>Aceita convênio médico?</summary><div>Não sou referenciada de convênio médico, porém ofereço desconto para pacientes conveniados. Para agendamento, envie uma foto da carteirinha pelo WhatsApp.</div></details>
+        <details><summary>Consigo recibo para reembolso?</summary><div><p>Sim. Ofereço recibo para que os pacientes solicitem reembolso através de seus planos de saúde.</p><p>A liberação e os valores reembolsáveis devem ser tratados diretamente com o convênio.</p></div></details>
+        <details><summary>Qual é o valor da consulta?</summary><div>As informações sobre valores de consultas e pacotes promocionais são passadas em contato particular. Clique em “Agendar consulta” para receber todas as informações.</div></details>
+        <details><summary>A bioimpedância é feita na consulta?</summary><div><p>Em todas as consultas é realizada uma avaliação completa, composta por peso, IMC, medidas de circunferências e bioimpedância simples para avaliar o percentual de gordura corporal total.</p><p>A bioimpedância completa pode ser adquirida separadamente ou em pacotes promocionais.</p></div></details>
+        <details><summary>Como funciona a bioimpedância completa?</summary><div>O exame analisa detalhadamente a composição corporal por segmentos, idade metabólica, gasto calórico basal, gordura visceral, massa muscular, percentual de gordura e água corporal, entre outros dados, facilitando o acompanhamento da evolução.</div></details>
+        <details><summary>A consulta tem direito a retorno?</summary><div><p>O paciente já recebe plano alimentar e conduta nutricional na primeira consulta, sem necessidade de retorno para iniciar o tratamento.</p><p>Como o tratamento normalmente exige um prazo mínimo de três meses, existe pacote com valor reduzido para um acompanhamento mais próximo.</p></div></details>
+      </div></div></section>
+
+    <section class="location" id="localizacao"><div class="container location-grid"><div class="location-card"><span class="eyebrow">Onde atender</span><h2>Online ou presencial em Bragança Paulista.</h2><div class="contact-row"><span>⌖</span><div><strong>Euroville Office Premium / Euroville Mall</strong>Prédio 2, Sala 218 — Bragança Paulista / SP</div></div><div class="contact-row"><span>◉</span><div><strong>WhatsApp</strong>(11) 98298-4457</div></div><div class="contact-row"><span>✉</span><div><strong>E-mail</strong>marianarfreire@gmail.com</div></div><div class="contact-row"><span>◎</span><div><strong>Instagram</strong>@qbee.mari</div></div><a class="btn" style="background:#fff;color:var(--forest);margin-top:28px" href="https://wa.me/5511982984457?text=Olá%2C%20Mariana!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Agendar consulta</a></div><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Euroville+Office+Premium+Praça+Maastricht+200+Bragança+Paulista" target="_blank" rel="noopener"><span class="btn">Abrir localização no mapa</span></a></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><img src="assets/logo-mariana-freire.png" alt="Mariana Freire Nutricionista" style="width:220px;max-height:64px;object-fit:contain;object-position:left center;margin-bottom:24px"><div class="footer-row"><span>© <span id="year"></span> Nutricionista Mariana Freire. Todos os direitos reservados.</span><div class="footer-links"><a href="mailto:marianarfreire@gmail.com">E-mail</a><a href="https://www.instagram.com/qbee.mari/" target="_blank" rel="noopener">Instagram</a><a href="#inicio">Voltar ao topo ↑</a></div></div></div></footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5511982984457?text=Olá%2C%20Mariana!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp"><svg viewBox="0 0 32 32" width="29" height="29" fill="currentColor" aria-hidden="true"><path d="M19.11 17.21c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z"/><path d="M16.03 3C8.84 3 3 8.81 3 15.97c0 2.55.75 5.04 2.16 7.16L3 29l6.05-2.11a13.05 13.05 0 0 0 6.98 2.02h.01C23.22 28.91 29 23.1 29 15.96 29 8.81 23.21 3 16.03 3zm0 23.72h-.01a10.84 10.84 0 0 1-5.52-1.51l-.4-.24-3.59 1.25 1.2-3.49-.26-.41a10.72 10.72 0 0 1-1.65-5.72c0-5.92 4.84-10.73 10.79-10.73 2.88 0 5.59 1.12 7.62 3.15a10.65 10.65 0 0 1 3.16 7.59c0 5.92-4.84 10.74-10.78 10.74z"/></svg></a>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const menu = document.getElementById('menu');
+    const menuBtn = document.getElementById('menuBtn');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10));
+    menuBtn.addEventListener('click', () => { const open = menu.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', open); menuBtn.textContent = open ? '✕' : '☰'; });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.classList.remove('open'); menuBtn.textContent='☰'; menuBtn.setAttribute('aria-expanded','false'); }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
